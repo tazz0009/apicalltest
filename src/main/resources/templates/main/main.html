@@ -1,0 +1,75 @@
+<!DOCTYPE>
+<html data-theme="light" th:lang="ko"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layoutForMain}">
+<head>
+<link href="/css/main.css" rel="stylesheet" />
+<title>Mobile Main page</title>
+<script>
+    $(document).ready(function () {
+    });
+
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "80%";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    
+    function testFegin() {
+    	console.log('testFegin!!');
+    	location.href="/feign";
+    }
+
+    function gotoSendMoney() {
+    	console.log('gotoSendMoney!!');
+    	location.href="/send/form";
+    }
+    
+    function logout() {
+    	console.log('logout!!');
+    	location.href="/logoutBefore";
+    }
+</script>
+</head>
+<body class="min-h-full">
+	<div class="min-h-full mx-auto max-w-xl" layout:fragment="content">
+		<div class="navbar bg-slate-500">
+			<div class="flex-none">
+				<button class="btn btn-square btn-ghost" onclick="openNav();">
+					<span class="material-symbols-outlined"> menu </span>
+				</button>
+			</div>
+			<div class="flex-1">
+				<a class="btn btn-ghost normal-case text-xl text-white">이웃집후라이팬</a>
+			</div>
+			<div class="flex-none">
+				<button class="btn btn-square btn-ghost" onclick="logout();">
+					<span class="material-symbols-outlined"> logout </span>
+				</button>
+			</div>
+		</div>
+		<div class="flex justify-evenly my-5">
+			<div onclick="testFegin();">
+				<div class="flex flex-col justify-center items-center bg-white rounded-lg outline outline-gray-200 
+							hover:outline-offset-4 hover:outline-blue-400">
+					<span class="material-symbols-outlined text-3xl p-4 pb-0" style="font-size: 48px"> dvr </span> 
+					<span class="mt-1">Feign</span>
+				</div>
+			</div>
+		</div>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#">About</a> 
+			<a href="#">Services</a> 
+			<a href="#">Clients</a>
+			<a href="#">Contact</a>
+		</div>
+	</div>
+</body>
+</html>

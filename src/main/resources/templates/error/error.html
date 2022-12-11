@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html th:lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layoutForError}">
+<head>
+<title>Error page</title>
+</head>
+<body>
+	<div class="col-md-10 col-md-offset-1 pull-right" layout:fragment="content">
+		<img class="img-error"
+			src="https://bootdey.com/img/Content/fdfadfadsfadoh.png">
+		<h2 th:text="${msg}"></h2>
+		<p>Sorry, an error has occured, Requested page not found!</p>
+		<p th:text="${msg}"></p>
+		<div class="error-actions">
+			<a href="#" class="btn btn-primary btn-lg" onclick="goback();"> 
+				<span class="glyphicon glyphicon-arrow-left"></span> Back Home
+			</a>
+		</div>
+	</div>
+</body>
+</html>

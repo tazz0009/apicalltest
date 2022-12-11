@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html th:lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Error Layout page</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8" />
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<style type="text/css">
+body {
+	padding-top: 15%;
+}
+.img-error {
+	width: 220px;
+	height: 220px;
+}
+</style>
+<script type="text/javascript">
+	function goback() {
+		window.history.back();
+	}
+	function goLoginPage() {
+		window.location.href = '/login';
+	}
+</script>
+</head>
+<body>
+	<div class="container bootstrap snippets bootdey">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="pull-right" style="margin-top: 10px;">
+					<div class="col-md-10 col-md-offset-1 pull-right" layout:fragment="content">
+						<img class="img-error"
+							src="https://bootdey.com/img/Content/fdfadfadsfadoh.png">
+						<h2>404 Not Found</h2>
+						<p>Sorry, an error has occured, Requested page not found!</p>
+						<p th:text="${msg}"></p>
+						<div class="error-actions">
+							<a href="javascript:history.back();" class="btn btn-primary btn-lg"> <span
+								class="glyphicon glyphicon-arrow-left"></span> Back Home
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

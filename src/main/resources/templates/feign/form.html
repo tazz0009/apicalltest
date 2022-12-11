@@ -1,0 +1,137 @@
+<!DOCTYPE>
+<html data-theme="light" th:lang="ko"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	layout:decorate="~{layouts/layoutForMain}">
+<head>
+
+<link href="/css/datepicker/default.css" rel="stylesheet" />
+<link href="/css/datepicker/default.date.css" rel="stylesheet" />
+<script src="/js/datepicker/picker.js"></script>
+<script src="/js/datepicker/picker.date.js"></script>
+<script src="/js/datepicker/picker.time.js"></script>
+<script src="/js/datepicker/ko_KR.js"></script>
+<style>
+.no-data-col {
+	text-align: center;
+}
+</style>
+<title>Feign Test page</title>
+<script>
+    $(document).ready(function () {
+    });
+    function sendGetTest() {
+    	var params = formData("form[name=searchForm]");
+    	console.log({params});
+    	transaction($("#my-modal-5"), '/feign/gettest', params, callback);
+    }
+    function sendPostTest() {
+    	var params = formData("form[name=searchForm]");
+    	console.log({params});
+    	transaction($("#my-modal-5"), '/feign/posttest', params, callback);
+    }
+    function callback(res) {
+        console.log({res});
+        alert('status : ' + res.status);
+    }
+</script>
+</head>
+<body class="min-h-full">
+    <div class="min-h-full mx-auto max-w-xl" layout:fragment="content">
+        <div class="navbar bg-slate-500">
+            <div class="flex-none">
+                <a class="btn btn-square btn-ghost" href="/main">
+                    <span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span>
+                </a>
+            </div>
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-xl text-white"
+                    >Feign Test</a
+                >
+            </div>
+        </div>
+        <form name="searchForm" onSubmit="return false;">
+        <div class="flex justify-center">
+            <div class="card w-full m-2 bg-stone-100 rounded">
+                <div class="card-body">
+                    <h2 class="card-title">테스트 방식</h2>
+                    <div class="card-actions justify-between mt-2">
+                        <button class="btn btn-primary btn-sm" onclick="sendGetTest();">
+                        	Api Call By Feign Get
+                        </button>
+                        <button class="btn btn-info btn-sm" onclick="sendPostTest();">
+                        	Api Call By Feign Post
+                        </button>
+                    </div>
+                    <div class="card-actions justify-between mt-2">
+                    	<div class="form-control">
+							<label class="label"> 
+								<span class="label-text">업체코드</span> 
+								<span class="label-text-alt"></span>
+							</label> 
+							<input type="text" placeholder="Type here" readonly="readonly" value="SDS00999" name="comCode"
+								class="input input-bordered input-sm w-full" />
+						</div>
+                    </div>
+                    <div class="card-actions justify-between mt-2">
+                    	<div class="form-control">
+							<label class="label"> 
+								<span class="label-text">테스트 모계좌번호</span> 
+								<span class="label-text-alt"></span>
+							</label> 
+							<input type="text" placeholder="Type here" readonly="readonly" value="207-9999-9827-99" name="account001"
+								class="input input-bordered input-sm w-full" />
+						</div>
+                    </div>
+                    <div class="card-actions justify-between mt-2">
+                    	<div class="form-control">
+							<label class="label"> 
+								<span class="label-text">테스트 입금계좌번호(당행)</span> 
+								<span class="label-text-alt"></span>
+							</label> 
+							<input type="text" placeholder="Type here" readonly="readonly" value="587-22-9999999" name="account002"
+								class="input input-bordered input-sm w-full" />
+						</div>
+                    </div>
+                    <div class="card-actions justify-between mt-2">
+                    	<div class="form-control">
+							<label class="label"> 
+								<span class="label-text">테스트 입금계좌번호(타행_정상) (은행코드 : 004)</span> 
+								<span class="label-text-alt"></span>
+							</label> 
+							<input type="text" placeholder="Type here" readonly="readonly" value="00150204082922" name="account004"
+								class="input input-bordered input-sm w-full" />
+						</div>
+                    </div>
+                    <div class="card-actions justify-between mt-2">
+                    	<div class="form-control">
+							<label class="label"> 
+								<span class="label-text">테스트 입금계좌번호(타행_정상) (은행코드 : 081)</span> 
+								<span class="label-text-alt"></span>
+							</label> 
+							<input type="text" placeholder="Type here" readonly="readonly" value="334049999999" name="account081"
+								class="input input-bordered input-sm w-full" />
+						</div>
+                    </div>
+                    <div class="card-actions justify-between mt-2">
+                    	<div class="form-control">
+							<label class="label"> 
+								<span class="label-text">테스트 입금계좌번호(타행_불능) (은행코드 : 034)</span> 
+								<span class="label-text-alt"></span>
+							</label> 
+							<input type="text" placeholder="Type here" readonly="readonly" value="720109999999" name="account034"
+								class="input input-bordered input-sm w-full" />
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+        
+    </div>
+</body>
+</html>

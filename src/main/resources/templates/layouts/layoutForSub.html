@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html th:lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sub Layout page</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link type="text/css" rel="stylesheet" href="/css/style.css">
+<link href="/css/datepicker/default.css" rel="stylesheet" />
+<link href="/css/datepicker/default.date.css" rel="stylesheet" />
+<link href="/css/grid/tui-grid.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+	crossorigin="anonymous"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/js/grid/xlsx.js"></script>
+<script src="/js/grid/tui-grid.js"></script>	
+<script src="/js/common.js"></script>	
+<script src="/js/datepicker/picker.js"></script>
+<script src="/js/datepicker/picker.date.js"></script>
+<script src="/js/datepicker/picker.time.js"></script>
+<script src="/js/datepicker/ko_KR.js"></script>
+</head>
+<body>
+	<input type="checkbox" id="my-modal-5" class="modal-toggle"/>
+    <div class="modal" id="my-modal-2">
+      	<div id="loader"></div>
+    </div>
+	<div layout:fragment="content">
+		<p>Page content goes here</p>
+	</div>
+</body>
+</html>
